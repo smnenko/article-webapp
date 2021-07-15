@@ -8,7 +8,10 @@ from .managers import UserManager
 
 class Country(models.Model):
     name = models.CharField(max_length=32)
-    sticker = models.CharField(max_length=1)
+    sticker = models.CharField(max_length=3)
+
+    def __str__(self):
+        return self.name
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -33,3 +36,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     def token(self):
         return RefreshToken.for_user(self)
 
+
+class AuthorSubscriber(models.Model):
+    author = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='author')
+    subscriber = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='subscriber')
