@@ -15,3 +15,16 @@ class ArticleTrendingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = ('author', 'title', 'date_created')
+
+
+class ArticleLatestSerializer(serializers.ModelSerializer):
+    author = serializers.SlugRelatedField(slug_field='username', read_only=True)
+    content = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Article
+        fields = ('author', 'title', 'content', 'topics', 'date_created')
+        depth = 1
+
+    def get_content(self, article):
+        return article.content[:200].replace('\r', '').replace('\n', ' ')[:100] + '...'
