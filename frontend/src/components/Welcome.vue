@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper border border-bottom-2 border-top-2 border-let-0 border-right-0 border-dark">
+    <div class="wrapper">
         <div class="container py-4">
             <div class="row">
                 <div class="col">
@@ -27,6 +27,9 @@
 <style scoped>
     .wrapper {
         background-color: lightblue;
+        border: 2px solid black;
+        border-left: 0;
+        border-right: 0;
     }
 
     h1 {

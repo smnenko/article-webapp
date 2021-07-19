@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper border border-bottom-2 border-top-0 border-left-0 border-right-0">
+    <div class="wrapper">
         <div class="container py-5">
             <h6 class="text-uppercase fw-bold">Trending on Article Wep App</h6>
             <div class="trending row m-0">
@@ -55,6 +55,11 @@
 </script>
 
 <style scoped>
+
+    .wrapper {
+        border-bottom: 2px solid silver;
+    }
+
     .author {
         font-size: 13px;
     }

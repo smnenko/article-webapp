@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav class="pt-2">
         <a href="#" class="fw-light text-decoration-none text-dark px-3">Our story</a>
         <a href="#" class="fw-light text-decoration-none text-dark px-3">Membership</a>
         <a href="#" class="fw-light text-decoration-none text-dark px-3">Write</a>

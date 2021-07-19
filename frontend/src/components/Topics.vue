@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div class="border-bottom">
         <h6 class="fw-bold text-uppercase">Discover more of what matters to you</h6>
-        <div class="topics">
-            <div v-for="item in items" v-bind:key="item.id" class="item px-3 py-2 mx-1 my-1">
-                <a :href="'/topic/' + item.name" class="text-decoration-none text-muted">{{ item.name }}</a>
+        <div class="item-wrapper">
+            <div v-for="item in items" v-bind:key="item.id" class="item mx-1 my-1">
+                <a :href="'/topic/' + item.name" class="px-3 py-2 d-block text-decoration-none text-muted">{{ item.name }}</a>
             </div>
         </div>
-        <a href="/topics" class="d-block text-success text-decoration-none mt-1">See all topics</a>
+        <a href="/topics" class="d-block text-success text-decoration-none my-4">See all topics</a>
     </div>
 </template>
 
@@ -39,14 +39,14 @@
         font-size: 14px;
     }
 
+    .item-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     .item {
         border: 1px solid silver;
         border-radius: 5px;
-        float: left;
-    }
-
-    .item:last-of-type {
-        clear: both;
     }
 
     .item a {
