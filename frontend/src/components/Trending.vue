@@ -38,7 +38,7 @@
         },
         mounted() {
             axios
-                .get('http://localhost:8000/api/v1/article/trending')
+                .get('http://localhost:8000/api/v1/article/trending/')
                 .then(
                     response => {
                         if (response.status === 200) {

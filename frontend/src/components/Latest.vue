@@ -2,14 +2,14 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-8">
-                <div v-for="item in items" v-bind:key="item" class="mt-3">
+                <div v-for="item in items" :key="item.id.toString()" class="mt-3">
                     <h6 class="fw-bold">{{ item.author }}</h6>
                     <h3 class="fw-bold">{{ item.title }}</h3>
                     <p class="text-muted">{{ item.content }}</p>
                     <div>
                         <span>{{ getDateFromDatetime(item.date_created) }}</span>
                         <span> • {{ randomMinRead(1, 8) }} min read • </span>
-                        <span v-for="topic in item.topics" v-bind:key="topic.id" class="topic mr-2 p-1">{{ topic.name }}</span>
+                        <span v-for="topic in item.topics" :key="topic.id.toString()" class="topic mr-2 p-1">{{ topic.name }}</span>
                     </div>
                 </div>
             </div>
@@ -36,12 +36,11 @@
         },
         mounted() {
             axios
-                .get('http://localhost:8000/api/v1/article/latest')
+                .get('http://localhost:8000/api/v1/article/latest/')
                 .then(
                     response => {
                         if (response.status === 200) {
                             this.items = response.data.results
-                            console.log(this.items)
                         }
                     }
                 )

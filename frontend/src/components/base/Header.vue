@@ -1,6 +1,6 @@
 <template>
     <header class="container py-4 d-flex justify-content-between">
-        <a href="/" class="fw-bold fs-1 text-decoration-none text-dark">Article Web App</a>
+        <router-link to="/" class="fw-bold fs-1 text-decoration-none text-dark">Article Web App</router-link>
         <Nav/>
     </header>
 </template>
