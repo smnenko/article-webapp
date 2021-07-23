@@ -2,10 +2,10 @@
     <nav class="pt-2">
         <a href="#" class="fw-light text-decoration-none text-dark px-3">Our story</a>
         <a href="#" class="fw-light text-decoration-none text-dark px-3">Membership</a>
-        <a href="#" class="fw-light text-decoration-none text-dark px-3">Write</a>
-        <span v-if="email">
-            {{ email }}
-            <router-link to="logout" class="logout fw-light text-decoration-none btn btn-secondary">Logout</router-link>
+        <router-link to="/write" class="fw-light text-decoration-none text-dark px-3">Write</router-link>
+        <span v-if="status">
+                <router-link to="/profile" class="text-decoration-none text-dark">{{ email }}</router-link>
+            <router-link to="/logout" class="logout fw-light text-decoration-none btn btn-secondary">Logout</router-link>
         </span>
         <span v-else>
             <router-link to="/login" class="fw-light text-decoration-none text-dark px-3">Sign In</router-link>
@@ -16,13 +16,30 @@
 </template>
 
 <script>
+    import {logout} from "@/utils/auth";
+
     export default {
         name: "Nav",
         data() {
             return {
-                email: localStorage.getItem('email')
+                name: this.$cookie.get('name'),
+                email: this.$cookie.get('email'),
+                status: null,
             }
         },
+        mounted() {
+            if (this.$cookie.get('email')) {
+                let expTokenDate = this.$cookie.get('refresh_exp')
+                if (new Date(expTokenDate * 1000) > new Date())
+                {
+                    this.status=true
+                }
+                else {
+                    logout(this.$cookie)
+                    this.status=false
+                }
+            }
+        }
     }
 </script>
 

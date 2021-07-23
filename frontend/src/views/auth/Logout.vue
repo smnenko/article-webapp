@@ -5,11 +5,11 @@
 </template>
 
 <script>
+    import {logout} from "@/utils/auth";
     export default {
         name: "Logout",
         mounted() {
-            this.$cookie.delete('email')
-            this.$cookie.delete('token')
+            logout(this.$cookie)
             this.$router.push('/')
         }
     }

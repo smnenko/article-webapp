@@ -9,14 +9,16 @@
                         <div class="row col-10">
                         <span class="col-10 pt-2">
                             <img src="https://miro.medium.com/fit/c/20/20/1*dmbNkD5D-u45r44go_cf0g.png" class="pb-1" alt="">
-                            <a :href="'/author/' + item.author" class="author px-3 fw-bold text-decoration-none text-dark">{{ item.author }}</a>
+                            <router-link :to="'/user/' + item.author" class="author px-3 fw-bold text-decoration-none text-dark">{{ item.author }}</router-link>
                         </span>
-                            <span class="col-12 pt-2 fw-bold">
-                            {{ item.title }}
-                        </span>
-                            <span class="col-12 date text-muted">
-                            {{ getDateFromDatetime(item.date_created) }} • {{ randomMinRead(1, 8) }} min read
-                        </span>
+                            <router-link :to="'/article/' + item.id" class="text-decoration-none">
+                                <span class="col-12 pt-2 fw-bold text-dark">
+                                    {{ item.title.slice(0, 35) }}...
+                                </span>
+                                <span class="col-12 date text-muted">
+                                    {{ getDateFromDatetime(item.date_created) }} • {{ randomMinRead(1, 8) }} min read
+                                </span>
+                            </router-link>
                         </div>
                     </div>
                 </div>

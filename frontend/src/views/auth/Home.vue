@@ -1,7 +1,8 @@
 <template>
-    <div>
+    <div class="mb-5">
         <Header />
         <Welcome />
+        <Trending />
         <Latest />
     </div>
 </template>
@@ -10,9 +11,10 @@
     import Header from "@/components/base/Header";
     import Welcome from "@/components/Welcome";
     import Latest from "@/components/Latest";
+    import Trending from "@/components/Trending";
     export default {
         name: "Home",
-        components: {Latest, Welcome, Header}
+        components: {Trending, Latest, Welcome, Header}
     }
 </script>
 

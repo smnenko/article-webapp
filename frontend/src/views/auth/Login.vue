@@ -62,12 +62,17 @@
                     .post('http://localhost:8000/api/v1/auth/login/', {'email': this.email, 'password': this.password})
                     .then(
                         response => {
+                            this.$cookie.set('id', response.data.id)
                             this.$cookie.set('email', response.data.email)
-                            this.$cookie.set('token', response.data.token.replaceAll("'", '"'))
+                            this.$cookie.set('access', response.data.access.token)
+                            this.$cookie.set('access_exp', response.data.access.exp)
+                            this.$cookie.set('refresh', response.data.refresh.token)
+                            this.$cookie.set('refresh_exp', response.data.refresh.exp)
                             this.$router.push('/')
                         }
                     ).catch(
                     error => {
+                        console.log(error)
                         let err = error.response.data['non_field_errors'][0]
                         this.errors.push(err[0].toUpperCase() + err.slice(1))
                     }

@@ -8,3 +8,6 @@ new Vue({
   router: router,
   render: h => h(App),
 }).$mount('#app')
+
+var VueCookie = require('vue-cookie');
+Vue.use(VueCookie);

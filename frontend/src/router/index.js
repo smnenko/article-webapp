@@ -7,22 +7,38 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('@/views/Home')
+    component: () => import('@/views/auth/Home')
   },
   {
     path: '/signup',
     name: 'signup',
-    component: () => import('@/views/Signup')
+    component: () => import('@/views/auth/Signup')
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/views/Login')
+    component: () => import('@/views/auth/Login')
   },
   {
     path: '/logout',
     name: 'logout',
-    component: () => import('@/views/Logout')
+    component: () => import('@/views/auth/Logout')
+  },
+  {
+    path: '/write',
+    name: 'write',
+    component: () => import('@/views/article/Write')
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import('@/views/auth/Profile')
+  },
+  {
+    path: '/article/:id',
+    name: 'article',
+    component: () => import('@/views/article/Detail'),
+    props: (route) => ({id: route.params.id}),
   }
 ]
 
