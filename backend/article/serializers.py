@@ -4,6 +4,8 @@ from .models import Article
 
 
 class ArticleSerializer(serializers.ModelSerializer):
+    author = serializers.SlugRelatedField(slug_field='username', read_only=True)
+
     class Meta:
         model = Article
         fields = '__all__'
@@ -14,7 +16,7 @@ class ArticleTrendingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ('author', 'title', 'date_created')
+        fields = ('id', 'author', 'title', 'date_created')
 
 
 class ArticleLatestSerializer(serializers.ModelSerializer):
@@ -23,7 +25,7 @@ class ArticleLatestSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ('author', 'title', 'content', 'topics', 'date_created')
+        fields = ('id', 'author', 'title', 'content', 'topics', 'date_created')
         depth = 1
 
     def get_content(self, article):

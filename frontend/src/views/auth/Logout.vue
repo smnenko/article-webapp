@@ -8,8 +8,8 @@
     export default {
         name: "Logout",
         mounted() {
-            localStorage.removeItem('email')
-            localStorage.removeItem('token')
+            this.$cookie.delete('email')
+            this.$cookie.delete('token')
             this.$router.push('/')
         }
     }

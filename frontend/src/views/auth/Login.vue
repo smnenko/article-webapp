@@ -62,7 +62,8 @@
                     .post('http://localhost:8000/api/v1/auth/login/', {'email': this.email, 'password': this.password})
                     .then(
                         response => {
-                            document.cookie =
+                            this.$cookie.set('email', response.data.email)
+                            this.$cookie.set('token', response.data.token.replaceAll("'", '"'))
                             this.$router.push('/')
                         }
                     ).catch(

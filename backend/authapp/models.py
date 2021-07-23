@@ -21,6 +21,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     country = models.ForeignKey(to=Country, on_delete=models.DO_NOTHING, null=True)
     bio = models.TextField(max_length=1024, null=True)
     birthday = models.DateField(default=now)
+    refresh_token = models.CharField(max_length=256, null=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -34,7 +35,22 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @property
     def token(self):
-        return RefreshToken.for_user(self)
+        refresh_token_obj = RefreshToken.for_user(self)
+        self.refresh_token = str(refresh_token_obj)
+        self.save()
+        access_token = refresh_token_obj.access_token
+        return {
+            'id': self.id,
+            'email': self.email,
+            'access': {
+                'token': str(access_token),
+                'exp': access_token['exp'],
+            },
+            'refresh': {
+                'token': str(self.refresh_token),
+                'exp': refresh_token_obj['exp']
+            }
+        }
 
 
 class AuthorSubscriber(models.Model):
