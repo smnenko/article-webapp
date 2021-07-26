@@ -1,16 +1,12 @@
 from django.utils.timezone import now, timedelta
 from rest_framework import generics
-from rest_framework import status
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
-from rest_framework.response import Response
 
+from authapp.models import User
 from .serializers import ArticleSerializer
 from .serializers import ArticleTrendingSerializer
 from .serializers import ArticleLatestSerializer
-
 from .models import Article
-from authapp.models import User
-from topic.models import Topic
 
 
 class ArticleTrendingListAPIView(generics.ListAPIView):

@@ -15,6 +15,7 @@ class TopicCreateAPIView(generics.CreateAPIView):
     permission_classes = (IsAdminUser, )
 
 
-class TopicRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+class TopicRetrieveAPIView(generics.RetrieveAPIView):
     serializer_class = TopicSerializer
     queryset = Topic.objects.all()
+    permission_classes = (IsAdminUser, )
