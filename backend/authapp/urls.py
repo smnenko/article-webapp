@@ -5,9 +5,9 @@ from . import views
 
 
 urlpatterns = [
-    path('create/', views.RegistrationAPIView.as_view()),
-    path('login/', views.LoginAPIView.as_view()),
-    path('<int:pk>/', views.UserRetrieveUpdateAPIView.as_view()),
-    path('token/', views.TokenRefreshView.as_view())
+    path('create/', views.RegistrationAPIView.as_view(), name='user_register'),
+    path('login/', views.LoginAPIView.as_view(), name='user_login'),
+    path('<int:pk>/', views.UserRetrieveUpdateAPIView.as_view(), name='user_retrieve'),
+    path('token/', views.TokenRefreshView.as_view(), name='user_token')
 ]
 
