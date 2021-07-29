@@ -68,6 +68,14 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = ['email', 'username', 'name', 'birthday', 'country', 'bio']
 
 
+class AuthorSerializer(serializers.ModelSerializer):
+    country = serializers.SlugRelatedField(slug_field='name', read_only=True)
+
+    class Meta:
+        model = User
+        fields = ['username', 'name', 'birthday', 'country', 'bio']
+
+
 class SubscribeSerializer(serializers.ModelSerializer):
 
     class Meta:

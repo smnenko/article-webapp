@@ -5,7 +5,7 @@ from authapp.models import User
 
 
 class ArticleSerializer(serializers.ModelSerializer):
-    author = serializers.SlugRelatedField(slug_field='username', queryset=User.objects.all())
+    author = serializers.SlugRelatedField(slug_field='email', queryset=User.objects.all())
 
     class Meta:
         model = Article
@@ -15,6 +15,14 @@ class ArticleSerializer(serializers.ModelSerializer):
         if attrs.get('author').username:
             return super().validate(attrs)
         raise serializers.ValidationError('Before you can create articles, specify a username')
+
+
+class ArticleRetrieveSerializer(serializers.ModelSerializer):
+    author = serializers.SlugRelatedField(slug_field='username', queryset=User.objects.all())
+
+    class Meta:
+        model = Article
+        fields = '__all__'
 
 
 class ArticleTrendingSerializer(serializers.ModelSerializer):

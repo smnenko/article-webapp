@@ -80,13 +80,13 @@
                         this.username = this.userInfo.username
                         this.bio = this.userInfo.bio
                     }
-                }
-            )
-            axios.get(process.env.VUE_APP_SERVER_HOST + 'article/latest/' + id + '/').then(
-                response => {
-                    if (response.status === 200) {
-                        this.items = response.data.results
-                    }
+                    axios.get(process.env.VUE_APP_SERVER_HOST + 'article/latest/' + this.username + '/').then(
+                        response => {
+                            if (response.status === 200) {
+                                this.items = response.data.results
+                            }
+                        }
+                    )
                 }
             )
         },

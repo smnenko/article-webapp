@@ -8,6 +8,7 @@ from .models import User, AuthorSubscriber
 from .serializers import RegistrationSerializer
 from .serializers import LoginSerializer
 from .serializers import ProfileSerializer
+from .serializers import AuthorSerializer
 from .serializers import TokenRefreshSerializer
 from .serializers import SubscribeSerializer
 
@@ -44,6 +45,13 @@ class UserRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
     queryset = User.objects.all()
     serializer_class = ProfileSerializer
     permission_classes = (IsAuthenticated, )
+
+
+class AuthorRetrieveAPIView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = AuthorSerializer
+    permission_classes = (IsAuthenticated, )
+    lookup_field = 'username'
 
 
 class SubscribeAPIView(generics.CreateAPIView):

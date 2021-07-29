@@ -64,6 +64,7 @@
                         response => {
                             this.$cookie.set('id', response.data.id)
                             this.$cookie.set('email', response.data.email)
+                            this.$cookie.set('username', response.data.username)
                             this.$cookie.set('access', response.data.access.token)
                             this.$cookie.set('access_exp', response.data.access.exp)
                             this.$cookie.set('refresh', response.data.refresh.token)
