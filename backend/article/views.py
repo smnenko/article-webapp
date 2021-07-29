@@ -1,5 +1,9 @@
 from django.utils.timezone import now, timedelta
 from rest_framework import generics
+from rest_framework import status
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.request import Request
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
 
 from authapp.models import User
@@ -54,3 +58,18 @@ class ArticleDestroyAPIView(generics.DestroyAPIView):
 
     def get_queryset(self):
         return Article.objects.filter(author_id=self.kwargs.get('user_id'))
+
+
+class ArticleFilter(generics.ListAPIView):
+    serializer_class = ArticleLatestSerializer
+
+    def get_queryset(self):
+        options = {}
+        queryset = Article.objects.all()
+        topic = self.request.query_params.get('topic')
+        content = self.request.query_params.get('content')
+        if topic is not None:
+            options['topics__name'] = topic
+        if content is not None:
+            options['content__icontains'] = content
+        return queryset.filter(**options).order_by('-date_created')
