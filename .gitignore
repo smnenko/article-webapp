@@ -2,6 +2,7 @@
 # backend files
 backend/venv
 backend/.idea
+backend/.pytest_cache
 **/__pycache__/
 
 # frontend files

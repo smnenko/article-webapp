@@ -3,6 +3,7 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
 
 from authapp.models import User
+from topic.models import Topic
 from .serializers import ArticleSerializer
 from .serializers import ArticleTrendingSerializer
 from .serializers import ArticleLatestSerializer
@@ -31,10 +32,6 @@ class ArticleCreateAPIView(generics.CreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     permission_classes = (IsAuthenticated, )
-
-    def post(self, request, *args, **kwargs):
-        request.data['author'] = User.objects.filter(email=request.data['author']).first().pk
-        return super().post(request, *args, **kwargs)
 
 
 class ArticleRetrieveAPIView(generics.RetrieveAPIView):
