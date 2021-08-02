@@ -40,6 +40,17 @@
                             <span class="fw-bold">Bio: </span>
                             {{ bio }}
                         </div>
+                        <div v-if="errors">
+                            <div v-for="error in errors" :key="error" class="alert alert-danger">
+                                {{ error }}
+                            </div>
+                        </div>
+                        <div v-if="status === true">
+                            <button class="btn btn-danger" @click="subscribe">unSubscribe</button>
+                        </div>
+                        <div v-else>
+                            <button class="btn btn-success" @click="subscribe">Subscribe</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -64,12 +75,39 @@
                 birthday: null,
                 country: null,
                 bio: null,
-                items: null
+                items: null,
+                status: null,
+                errors: null
             }
         },
         methods: {
             getDateFromDatetime,
-            randomMinRead
+            randomMinRead,
+            subscribe: function () {
+                axios.post(process.env.VUE_APP_SERVER_HOST + 'subscribe/create/', {
+                    author: this.username,
+                    subscriber: this.$cookie.get('email')
+                }, {
+                    headers: {
+                        Authorization: 'Bearer ' + this.$cookie.get('access')
+                    }
+                }).then(
+                    response => {
+                        if (response.status === 201) {
+                            this.status = true
+                        }
+                        if (response.status === 204) {
+                            this.status = false
+                        }
+                    }
+                ).catch(
+                    error => {
+                        this.errors = []
+                        let errorMsg = error.response.data['non_field_errors'][0]
+                        this.errors.push(errorMsg[0].toUpperCase() + errorMsg.slice(1))
+                    }
+                )
+            }
         },
         mounted() {
             axios.get(process.env.VUE_APP_SERVER_HOST + 'auth/' + this.$route.params.username + '/', {
@@ -84,10 +122,25 @@
                         this.birthday = response.data['birthday']
                         this.country = response.data['country']
                         this.bio = response.data['bio']
+                        this.status = response.data['status']
+                        console.log(response.data)
                         axios.get(process.env.VUE_APP_SERVER_HOST + 'article/latest/' + this.username + '/').then(
                             response => {
                                 if (response.status === 200) {
                                     this.items = response.data.results
+                                    axios.get(process.env.VUE_APP_SERVER_HOST + 'subscribe/', {
+                                        headers: {
+                                            Authorization: 'Bearer ' + this.$cookie.get('access')
+                                        },
+                                        params: {
+                                            author: this.username,
+                                            subscriber: this.$cookie.get('email')
+                                        }
+                                    }).then(response => {
+                                        if (response.status === 200) {
+                                            this.status = response.data.status
+                                        }
+                                    })
                                 }
                             }
                         )
