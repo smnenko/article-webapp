@@ -10,5 +10,4 @@ urlpatterns = [
     path('trending/', views.ArticleTrendingListAPIView.as_view()),
     path('latest/', views.ArticleLatestListAPIView.as_view()),
     path('latest/<int:pk>/', views.ArticleUserLatestListAPIView.as_view()),
-    path('filter/', views.ArticleFilter.as_view())
 ]

@@ -24,10 +24,6 @@
                         <hr>
                         <p>{{ description }}</p>
                         <hr>
-                        <form @submit="checkForm">
-                            <label for="content">Content contains: </label>
-                            <input type="text" id="content" v-model="content">
-                        </form>
                     </div>
                 </div>
             </div>
@@ -49,7 +45,6 @@
                 quote: null,
                 description: null,
                 items: null,
-                content: null,
             }
         },
         methods: {

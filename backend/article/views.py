@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.utils.timezone import now, timedelta
 from rest_framework import generics
 from rest_framework import status
@@ -20,7 +21,26 @@ class ArticleTrendingListAPIView(generics.ListAPIView):
 
 class ArticleLatestListAPIView(generics.ListAPIView):
     serializer_class = ArticleLatestSerializer
-    queryset = Article.objects.all().order_by('-date_created')[:10]
+    queryset = Article.objects.all().order_by('-date_created')
+
+    def get_queryset(self):
+        options = {}
+        queryset = Article.objects.all()
+        topics = [int(i) for i in self.request.query_params.getlist('topic[]')] or None
+        content = self.request.query_params.get('content') or None
+        if topics and len(topics) > 1:
+            queryset.annotate(c=Count('topics')).filter(c=len(topics))
+            for topic in topics:
+                queryset = queryset.filter(topics__id=topic)
+            if content:
+                return queryset.filter(content__icontains=content)
+
+        if topics:
+            options['topics__id'] = topics[0]
+
+        if content:
+            options['content__icontains'] = content
+        return queryset.filter(**options).order_by('-date_created')
 
 
 class ArticleUserLatestListAPIView(generics.ListAPIView):
@@ -58,18 +78,3 @@ class ArticleDestroyAPIView(generics.DestroyAPIView):
 
     def get_queryset(self):
         return Article.objects.filter(author_id=self.kwargs.get('user_id'))
-
-
-class ArticleFilter(generics.ListAPIView):
-    serializer_class = ArticleLatestSerializer
-
-    def get_queryset(self):
-        options = {}
-        queryset = Article.objects.all()
-        topic = self.request.query_params.get('topic')
-        content = self.request.query_params.get('content')
-        if topic is not None:
-            options['topics__name'] = topic
-        if content is not None:
-            options['content__icontains'] = content
-        return queryset.filter(**options).order_by('-date_created')
