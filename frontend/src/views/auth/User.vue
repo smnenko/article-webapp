@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div v-if="status === true">
-                            <button class="btn btn-danger" @click="subscribe">unSubscribe</button>
+                            <button class="btn btn-danger" @click="unSubscribe">unSubscribe</button>
                         </div>
                         <div v-else>
                             <button class="btn btn-success" @click="subscribe">Subscribe</button>
@@ -84,7 +84,7 @@
             getDateFromDatetime,
             randomMinRead,
             subscribe: function () {
-                axios.post(process.env.VUE_APP_SERVER_HOST + 'subscribe/create/', {
+                axios.post(process.env.VUE_APP_SERVER_HOST + 'subscribe/', {
                     author: this.username,
                     subscriber: this.$cookie.get('email')
                 }, {
@@ -96,6 +96,27 @@
                         if (response.status === 201) {
                             this.status = true
                         }
+                    }
+                ).catch(
+                    error => {
+                        this.errors = []
+                        let errorMsg = error.response.data['non_field_errors'][0]
+                        this.errors.push(errorMsg[0].toUpperCase() + errorMsg.slice(1))
+                    }
+                )
+            },
+            unSubscribe: function () {
+                axios.delete(process.env.VUE_APP_SERVER_HOST + 'subscribe/', {
+                    headers: {
+                        Authorization: 'Bearer ' + this.$cookie.get('access')
+                    },
+                    params: {
+                        author: this.username,
+                        subscriber: this.$cookie.get('email')
+                    }
+                }
+                ).then(
+                    response => {
                         if (response.status === 204) {
                             this.status = false
                         }
@@ -128,12 +149,11 @@
                             response => {
                                 if (response.status === 200) {
                                     this.items = response.data.results
-                                    axios.get(process.env.VUE_APP_SERVER_HOST + 'subscribe/', {
+                                    axios.get(process.env.VUE_APP_SERVER_HOST + 'subscribe/' + this.username + '/', {
                                         headers: {
                                             Authorization: 'Bearer ' + this.$cookie.get('access')
                                         },
                                         params: {
-                                            author: this.username,
                                             subscriber: this.$cookie.get('email')
                                         }
                                     }).then(response => {
