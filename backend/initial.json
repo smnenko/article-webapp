@@ -1,0 +1,2382 @@
+[
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add country",
+      "content_type": 6,
+      "codename": "add_country"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change country",
+      "content_type": 6,
+      "codename": "change_country"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete country",
+      "content_type": 6,
+      "codename": "delete_country"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view country",
+      "content_type": 6,
+      "codename": "view_country"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 7,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 7,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 7,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 7,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add author subscriber",
+      "content_type": 8,
+      "codename": "add_authorsubscriber"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change author subscriber",
+      "content_type": 8,
+      "codename": "change_authorsubscriber"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete author subscriber",
+      "content_type": 8,
+      "codename": "delete_authorsubscriber"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view author subscriber",
+      "content_type": 8,
+      "codename": "view_authorsubscriber"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add topic",
+      "content_type": 9,
+      "codename": "add_topic"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change topic",
+      "content_type": 9,
+      "codename": "change_topic"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete topic",
+      "content_type": 9,
+      "codename": "delete_topic"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view topic",
+      "content_type": 9,
+      "codename": "view_topic"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add article",
+      "content_type": 10,
+      "codename": "add_article"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change article",
+      "content_type": 10,
+      "codename": "change_article"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete article",
+      "content_type": 10,
+      "codename": "delete_article"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view article",
+      "content_type": 10,
+      "codename": "view_article"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add author subscriber",
+      "content_type": 11,
+      "codename": "add_authorsubscriber"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change author subscriber",
+      "content_type": 11,
+      "codename": "change_authorsubscriber"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete author subscriber",
+      "content_type": 11,
+      "codename": "delete_authorsubscriber"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view author subscriber",
+      "content_type": 11,
+      "codename": "view_authorsubscriber"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "992dc4bitsrb7o9qqpovm10wbyh1tdel",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2pAOtA64dN8zkGEYpGpoUtqV8e7apAvd_vfef6lA21rC1mQJU1IXBZ06_Y6R-CF1J-lO9TZrnuu6TFHvij5o0-Oc5Hk93L-DQq18azbIkBCMA9vbDiIOGQZwGJmsI0qWwPpzJoroUSiLEID0FpxHw0a9P_U9N-0:1mAs2H:zm7MbbTvmtbd7w9FzoZN-HheLHgM6T6ClC9mzMUQq0M",
+      "expire_date": "2021-08-17T10:52:37.111Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "e7ax6996ur62oetsbuejnlrvkiqa5nsr",
+    "fields": {
+      "session_data": ".eJxVjMEOwiAQRP-FsyHLUqT16N1vIMuykaqBpLQn479bkh40mdPMe_NWgbY1h63JEuakLsqo028XiZ9S-pAeVO5Vcy3rMkfdEX2sTd9qktf1YP8OMrXcbQdTFAvnAYfBsbEe90TrTfJuBCQnCIlJIss0IhCAScjWCOySEfX5ArdENt8:1m5lBV:vGcRCF_1vJSag91cg9KnRt-3X-j2T6szx2g7_-mYrgg",
+      "expire_date": "2021-08-03T08:33:01.398Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "jwkdreueo1mehs2ftukhluywzsn0sie8",
+    "fields": {
+      "session_data": ".eJxVjMEOwiAQRP-FsyHLUqT16N1vIMuykaqBpLQn479bkh40mdPMe_NWgbY1h63JEuakLsqo028XiZ9S-pAeVO5Vcy3rMkfdEX2sTd9qktf1YP8OMrXcbQdTFAvnAYfBsbEe90TrTfJuBCQnCIlJIss0IhCAScjWCOySEfX5ArdENt8:1m7y7l:MbFj2TW0bMyb3IgsjsVtY7k4P_OsoULGbvZfW8j2yqQ",
+      "expire_date": "2021-08-09T10:46:17.118Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "jwnyop61epv33uwyg8ojqdhs5gpqvimu",
+    "fields": {
+      "session_data": ".eJxVjMEOwiAQRP-FsyHLUqT16N1vIMuykaqBpLQn479bkh40mdPMe_NWgbY1h63JEuakLsqo028XiZ9S-pAeVO5Vcy3rMkfdEX2sTd9qktf1YP8OMrXcbQdTFAvnAYfBsbEe90TrTfJuBCQnCIlJIss0IhCAScjWCOySEfX5ArdENt8:1m6UEi:V07Z4Y7tOrNIBheZH4NvctxDYMOCsHoBv0JemuDjq40",
+      "expire_date": "2021-08-05T08:39:20.247Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "jwqga10armhlkhy9z5nxlvn4y7ff80cf",
+    "fields": {
+      "session_data": ".eJxVjMEOwiAQRP-FsyHLUqT16N1vIMuykaqBpLQn479bkh40mdPMe_NWgbY1h63JEuakLsqo028XiZ9S-pAeVO5Vcy3rMkfdEX2sTd9qktf1YP8OMrXcbQdTFAvnAYfBsbEe90TrTfJuBCQnCIlJIss0IhCAScjWCOySEfX5ArdENt8:1m6TBT:jJtKdIIRtj7p2RlzqO7rzkCF8vp_cVeBPPpk2g7e-Os",
+      "expire_date": "2021-08-05T07:31:55.603Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "pgljxoi27uqylwvea27enkx6xdq60ldb",
+    "fields": {
+      "session_data": ".eJxVjMEOwiAQRP-FsyHLUqT16N1vIMuykaqBpLQn479bkh40mdPMe_NWgbY1h63JEuakLsqo028XiZ9S-pAeVO5Vcy3rMkfdEX2sTd9qktf1YP8OMrXcbQdTFAvnAYfBsbEe90TrTfJuBCQnCIlJIss0IhCAScjWCOySEfX5ArdENt8:1m3w9a:C-v4ZFJ2dqEj-Q0vYIgl_bwND9Eq9NAIItrnVx5PmZc",
+      "expire_date": "2021-07-29T07:51:30.745Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "tmdephy8rkfz1oh26imuz53yx03rtus7",
+    "fields": {
+      "session_data": ".eJxVjMEOwiAQRP-FsyHLUqT16N1vIMuykaqBpLQn479bkh40mdPMe_NWgbY1h63JEuakLsqo028XiZ9S-pAeVO5Vcy3rMkfdEX2sTd9qktf1YP8OMrXcbQdTFAvnAYfBsbEe90TrTfJuBCQnCIlJIss0IhCAScjWCOySEfX5ArdENt8:1m4M65:xXAOVn_Y9V53bbwlpPcpqcUnrbUhcTdBwMt_qb7mZ48",
+      "expire_date": "2021-07-30T11:33:37.206Z"
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 52,
+    "fields": {
+      "name": "AFGHANISTAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 53,
+    "fields": {
+      "name": "ALBANIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 54,
+    "fields": {
+      "name": "ALGERIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 55,
+    "fields": {
+      "name": "AMERICAN SAMOA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 56,
+    "fields": {
+      "name": "ANDORRA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 57,
+    "fields": {
+      "name": "ANGOLA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 58,
+    "fields": {
+      "name": "ANGUILLA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 59,
+    "fields": {
+      "name": "ANTARCTICA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 60,
+    "fields": {
+      "name": "ANTIGUA AND BARBUDA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 61,
+    "fields": {
+      "name": "ARGENTINA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 62,
+    "fields": {
+      "name": "ARMENIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 63,
+    "fields": {
+      "name": "ARUBA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 64,
+    "fields": {
+      "name": "AUSTRALIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 65,
+    "fields": {
+      "name": "AUSTRIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 66,
+    "fields": {
+      "name": "AZERBAIJAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 67,
+    "fields": {
+      "name": "BAHAMAS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 68,
+    "fields": {
+      "name": "BAHRAIN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 69,
+    "fields": {
+      "name": "BANGLADESH",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 70,
+    "fields": {
+      "name": "BARBADOS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 71,
+    "fields": {
+      "name": "BELARUS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 72,
+    "fields": {
+      "name": "BELGIUM",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 73,
+    "fields": {
+      "name": "BELIZE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 74,
+    "fields": {
+      "name": "BENIN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 75,
+    "fields": {
+      "name": "BERMUDA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 76,
+    "fields": {
+      "name": "BHUTAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 77,
+    "fields": {
+      "name": "BOLIVIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 78,
+    "fields": {
+      "name": "BOSNIA AND HERZEGOVINA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 79,
+    "fields": {
+      "name": "BOTSWANA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 80,
+    "fields": {
+      "name": "BOUVET ISLAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 81,
+    "fields": {
+      "name": "BRAZIL",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 82,
+    "fields": {
+      "name": "BRITISH INDIAN OCEAN TERRITORY",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 83,
+    "fields": {
+      "name": "BRUNEI DARUSSALAM",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 84,
+    "fields": {
+      "name": "BULGARIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 85,
+    "fields": {
+      "name": "BURKINA FASO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 86,
+    "fields": {
+      "name": "BURUNDI",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 87,
+    "fields": {
+      "name": "CAMBODIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 88,
+    "fields": {
+      "name": "CAMEROON",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 89,
+    "fields": {
+      "name": "CANADA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 90,
+    "fields": {
+      "name": "CAPE VERDE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 91,
+    "fields": {
+      "name": "CAYMAN ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 92,
+    "fields": {
+      "name": "CENTRAL AFRICAN REPUBLIC",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 93,
+    "fields": {
+      "name": "CHAD",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 94,
+    "fields": {
+      "name": "CHILE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 95,
+    "fields": {
+      "name": "CHINA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 96,
+    "fields": {
+      "name": "CHRISTMAS ISLAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 97,
+    "fields": {
+      "name": "COCOS (KEELING) ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 98,
+    "fields": {
+      "name": "COLOMBIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 99,
+    "fields": {
+      "name": "COMOROS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 100,
+    "fields": {
+      "name": "CONGO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 101,
+    "fields": {
+      "name": "CONGO, THE DEMOCRATIC REPUBLIC OF",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 102,
+    "fields": {
+      "name": "COOK ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 103,
+    "fields": {
+      "name": "COSTA RICA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 104,
+    "fields": {
+      "name": "CÃ”TE D'IVOIRE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 105,
+    "fields": {
+      "name": "CROATIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 106,
+    "fields": {
+      "name": "CUBA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 107,
+    "fields": {
+      "name": "CYPRUS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 108,
+    "fields": {
+      "name": "CZECH REPUBLIC",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 109,
+    "fields": {
+      "name": "DENMARK",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 110,
+    "fields": {
+      "name": "DJIBOUTI",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 111,
+    "fields": {
+      "name": "DOMINICA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 112,
+    "fields": {
+      "name": "DOMINICAN REPUBLIC",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 113,
+    "fields": {
+      "name": "ECUADOR",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 114,
+    "fields": {
+      "name": "EGYPT",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 115,
+    "fields": {
+      "name": "EL SALVADOR",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 116,
+    "fields": {
+      "name": "EQUATORIAL GUINEA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 117,
+    "fields": {
+      "name": "ERITREA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 118,
+    "fields": {
+      "name": "ESTONIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 119,
+    "fields": {
+      "name": "ETHIOPIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 120,
+    "fields": {
+      "name": "FALKLAND ISLANDS (MALVINAS)",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 121,
+    "fields": {
+      "name": "FAROE ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 122,
+    "fields": {
+      "name": "FIJI",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 123,
+    "fields": {
+      "name": "FINLAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 124,
+    "fields": {
+      "name": "FRANCE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 125,
+    "fields": {
+      "name": "FRENCH GUIANA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 126,
+    "fields": {
+      "name": "FRENCH POLYNESIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 127,
+    "fields": {
+      "name": "FRENCH SOUTHERN TERRITORIES",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 128,
+    "fields": {
+      "name": "GABON",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 129,
+    "fields": {
+      "name": "GAMBIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 130,
+    "fields": {
+      "name": "GEORGIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 131,
+    "fields": {
+      "name": "GERMANY",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 132,
+    "fields": {
+      "name": "GHANA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 133,
+    "fields": {
+      "name": "GIBRALTAR",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 134,
+    "fields": {
+      "name": "GREECE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 135,
+    "fields": {
+      "name": "GREENLAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 136,
+    "fields": {
+      "name": "GRENADA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 137,
+    "fields": {
+      "name": "GUADELOUPE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 138,
+    "fields": {
+      "name": "GUAM",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 139,
+    "fields": {
+      "name": "GUATEMALA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 140,
+    "fields": {
+      "name": "GUINEA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 141,
+    "fields": {
+      "name": "GUINEA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 142,
+    "fields": {
+      "name": "GUYANA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 143,
+    "fields": {
+      "name": "HAITI",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 144,
+    "fields": {
+      "name": "HEARD ISLAND AND MCDONALD ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 145,
+    "fields": {
+      "name": "HONDURAS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 146,
+    "fields": {
+      "name": "HONG KONG",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 147,
+    "fields": {
+      "name": "HUNGARY",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 148,
+    "fields": {
+      "name": "ICELAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 149,
+    "fields": {
+      "name": "INDIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 150,
+    "fields": {
+      "name": "INDONESIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 151,
+    "fields": {
+      "name": "IRAN, ISLAMIC REPUBLIC OF",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 152,
+    "fields": {
+      "name": "IRAQ",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 153,
+    "fields": {
+      "name": "IRELAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 154,
+    "fields": {
+      "name": "ISRAEL",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 155,
+    "fields": {
+      "name": "ITALY",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 156,
+    "fields": {
+      "name": "JAMAICA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 157,
+    "fields": {
+      "name": "JAPAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 158,
+    "fields": {
+      "name": "JORDAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 159,
+    "fields": {
+      "name": "KAZAKHSTAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 160,
+    "fields": {
+      "name": "KENYA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 161,
+    "fields": {
+      "name": "KIRIBATI",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 162,
+    "fields": {
+      "name": "KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 163,
+    "fields": {
+      "name": "KOREA, REPUBLIC OF",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 164,
+    "fields": {
+      "name": "KUWAIT",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 165,
+    "fields": {
+      "name": "KYRGYZSTAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 166,
+    "fields": {
+      "name": "LAO PEOPLE'S DEMOCRATIC REPUBLIC",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 167,
+    "fields": {
+      "name": "LATVIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 168,
+    "fields": {
+      "name": "LEBANON",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 169,
+    "fields": {
+      "name": "LESOTHO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 170,
+    "fields": {
+      "name": "LIBERIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 171,
+    "fields": {
+      "name": "LIBYAN ARAB JAMAHIRIYA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 172,
+    "fields": {
+      "name": "LIECHTENSTEIN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 173,
+    "fields": {
+      "name": "LITHUANIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 174,
+    "fields": {
+      "name": "LUXEMBOURG",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 175,
+    "fields": {
+      "name": "MACAO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 176,
+    "fields": {
+      "name": "MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 177,
+    "fields": {
+      "name": "MADAGASCAR",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 178,
+    "fields": {
+      "name": "MALAWI",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 179,
+    "fields": {
+      "name": "MALAYSIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 180,
+    "fields": {
+      "name": "MALDIVES",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 181,
+    "fields": {
+      "name": "MALI",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 182,
+    "fields": {
+      "name": "MALTA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 183,
+    "fields": {
+      "name": "MARSHALL ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 184,
+    "fields": {
+      "name": "MARTINIQUE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 185,
+    "fields": {
+      "name": "MAURITANIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 186,
+    "fields": {
+      "name": "MAURITIUS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 187,
+    "fields": {
+      "name": "MAYOTTE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 188,
+    "fields": {
+      "name": "MEXICO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 189,
+    "fields": {
+      "name": "MICRONESIA, FEDERATED STATES OF",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 190,
+    "fields": {
+      "name": "MOLDOVA, REPUBLIC OF",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 191,
+    "fields": {
+      "name": "MONACO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 192,
+    "fields": {
+      "name": "MONGOLIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 193,
+    "fields": {
+      "name": "MONTSERRAT",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 194,
+    "fields": {
+      "name": "MOROCCO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 195,
+    "fields": {
+      "name": "MOZAMBIQUE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 196,
+    "fields": {
+      "name": "MYANMAR",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 197,
+    "fields": {
+      "name": "NAMIBIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 198,
+    "fields": {
+      "name": "NAURU",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 199,
+    "fields": {
+      "name": "NEPAL",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 200,
+    "fields": {
+      "name": "NETHERLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 201,
+    "fields": {
+      "name": "NETHERLANDS ANTILLES",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 202,
+    "fields": {
+      "name": "NEW CALEDONIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 203,
+    "fields": {
+      "name": "NEW ZEALAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 204,
+    "fields": {
+      "name": "NICARAGUA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 205,
+    "fields": {
+      "name": "NIGER",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 206,
+    "fields": {
+      "name": "NIGERIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 207,
+    "fields": {
+      "name": "NIUE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 208,
+    "fields": {
+      "name": "NORFOLK ISLAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 209,
+    "fields": {
+      "name": "NORTHERN MARIANA ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 210,
+    "fields": {
+      "name": "NORWAY",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 211,
+    "fields": {
+      "name": "OMAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 212,
+    "fields": {
+      "name": "PAKISTAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 213,
+    "fields": {
+      "name": "PALAU",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 214,
+    "fields": {
+      "name": "PALESTINIAN TERRITORY, OCCUPIED",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 215,
+    "fields": {
+      "name": "PANAMA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 216,
+    "fields": {
+      "name": "PAPUA NEW GUINEA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 217,
+    "fields": {
+      "name": "PARAGUAY",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 218,
+    "fields": {
+      "name": "PERU",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 219,
+    "fields": {
+      "name": "PHILIPPINES",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 220,
+    "fields": {
+      "name": "PITCAIRN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 221,
+    "fields": {
+      "name": "POLAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 222,
+    "fields": {
+      "name": "PORTUGAL",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 223,
+    "fields": {
+      "name": "PUERTO RICO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 224,
+    "fields": {
+      "name": "QATAR",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 225,
+    "fields": {
+      "name": "RÃ‰UNION",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 226,
+    "fields": {
+      "name": "ROMANIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 227,
+    "fields": {
+      "name": "RUSSIAN FEDERATION",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 228,
+    "fields": {
+      "name": "RWANDA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 229,
+    "fields": {
+      "name": "SAINT HELENA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 230,
+    "fields": {
+      "name": "SAINT KITTS AND NEVIS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 231,
+    "fields": {
+      "name": "SAINT LUCIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 232,
+    "fields": {
+      "name": "SAINT PIERRE AND MIQUELON",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 233,
+    "fields": {
+      "name": "SAINT VINCENT AND THE GRENADINES",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 234,
+    "fields": {
+      "name": "SAMOA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 235,
+    "fields": {
+      "name": "SAN MARINO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 236,
+    "fields": {
+      "name": "SAO TOME AND PRINCIPE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 237,
+    "fields": {
+      "name": "SAUDI ARABIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 238,
+    "fields": {
+      "name": "SENEGAL",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 239,
+    "fields": {
+      "name": "SERBIA AND MONTENEGRO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 240,
+    "fields": {
+      "name": "SEYCHELLES",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 241,
+    "fields": {
+      "name": "SIERRA LEONE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 242,
+    "fields": {
+      "name": "SINGAPORE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 243,
+    "fields": {
+      "name": "SLOVAKIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 244,
+    "fields": {
+      "name": "SLOVENIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 245,
+    "fields": {
+      "name": "SOLOMON ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 246,
+    "fields": {
+      "name": "SOMALIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 247,
+    "fields": {
+      "name": "SOUTH AFRICA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 248,
+    "fields": {
+      "name": "SOUTH GEORGIA AND SOUTH SANDWICH ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 249,
+    "fields": {
+      "name": "SPAIN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 250,
+    "fields": {
+      "name": "SRI LANKA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 251,
+    "fields": {
+      "name": "SUDAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 252,
+    "fields": {
+      "name": "SURINAME",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 253,
+    "fields": {
+      "name": "SVALBARD AND JAN MAYEN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 254,
+    "fields": {
+      "name": "SWAZILAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 255,
+    "fields": {
+      "name": "SWEDEN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 256,
+    "fields": {
+      "name": "SWITZERLAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 257,
+    "fields": {
+      "name": "SYRIAN ARAB REPUBLIC",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 258,
+    "fields": {
+      "name": "TAIWAN, PROVINCE OF CHINA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 259,
+    "fields": {
+      "name": "TAJIKISTAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 260,
+    "fields": {
+      "name": "TANZANIA, UNITED REPUBLIC OF",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 261,
+    "fields": {
+      "name": "THAILAND",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 262,
+    "fields": {
+      "name": "TIMOR",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 263,
+    "fields": {
+      "name": "TOGO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 264,
+    "fields": {
+      "name": "TOKELAU",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 265,
+    "fields": {
+      "name": "TONGA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 266,
+    "fields": {
+      "name": "TRINIDAD AND TOBAGO",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 267,
+    "fields": {
+      "name": "TUNISIA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 268,
+    "fields": {
+      "name": "TURKEY",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 269,
+    "fields": {
+      "name": "TURKMENISTAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 270,
+    "fields": {
+      "name": "TURKS AND CAICOS ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 271,
+    "fields": {
+      "name": "TUVALU",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 272,
+    "fields": {
+      "name": "UGANDA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 273,
+    "fields": {
+      "name": "UKRAINE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 274,
+    "fields": {
+      "name": "UNITED ARAB EMIRATES",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 275,
+    "fields": {
+      "name": "UNITED KINGDOM",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 276,
+    "fields": {
+      "name": "UNITED STATES",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 277,
+    "fields": {
+      "name": "UNITED STATES MINOR OUTLYING ISLANDS",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 278,
+    "fields": {
+      "name": "URUGUAY",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 279,
+    "fields": {
+      "name": "UZBEKISTAN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 280,
+    "fields": {
+      "name": "VANUATU",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 281,
+    "fields": {
+      "name": "VIET NAM",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 282,
+    "fields": {
+      "name": "VIRGIN ISLANDS, BRITISH",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 283,
+    "fields": {
+      "name": "VIRGIN ISLANDS, U.S.",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 284,
+    "fields": {
+      "name": "WALLIS AND FUTUNA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 285,
+    "fields": {
+      "name": "WESTERN SAHARA",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 286,
+    "fields": {
+      "name": "YEMEN",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "authapp.country",
+    "pk": 287,
+    "fields": {
+      "name": "ZIMBABWE",
+      "sticker": ""
+    }
+  },
+  {
+    "model": "topic.topic",
+    "pk": 1,
+    "fields": {
+      "name": "Programming",
+      "quote": "The good, the bad, the buggy.",
+      "description": "Follow to see more stories about Programming on your homepage and in your Aticle Web App Daily Digest",
+      "date_created": "2021-07-15T07:44:01.844Z"
+    }
+  },
+  {
+    "model": "topic.topic",
+    "pk": 2,
+    "fields": {
+      "name": "Javascript",
+      "quote": "An ode to code.",
+      "description": "Follow to see more stories about Javascript on your homepage and in your Medium Daily Digest",
+      "date_created": "2021-07-15T11:12:59.756Z"
+    }
+  },
+  {
+    "model": "topic.topic",
+    "pk": 3,
+    "fields": {
+      "name": "Software Engineering",
+      "quote": "Back-end to front-end.",
+      "description": "Follow to see more stories about Software Engineering on your homepage and in your Medium Daily Digest",
+      "date_created": "2021-07-15T11:32:49.477Z"
+    }
+  },
+  {
+    "model": "topic.topic",
+    "pk": 4,
+    "fields": {
+      "name": "Data Science",
+      "quote": "Query this.",
+      "description": "Follow to see more stories about Data Science on your homepage and in your Medium Daily Digest",
+      "date_created": "2021-07-15T11:33:08.870Z"
+    }
+  }
+]
