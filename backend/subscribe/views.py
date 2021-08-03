@@ -26,7 +26,7 @@ class SubscribeAPIView(APIView):
         if not obj.exists():
             serializer = self.serializer_class(data={'author': author, 'subscriber': subscriber})
             serializer.is_valid()
-            serializer.create(serializer.validated_data)
+            serializer.save()
             return Response(serializer.data, status.HTTP_201_CREATED)
         return Response({'message': 'You are already subscribed for this user'}, status.HTTP_400_BAD_REQUEST)
 
