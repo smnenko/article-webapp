@@ -10,5 +10,6 @@ class IsAuthor(BasePermission):
 
     def has_permission(self, request: Request, view: View):
         return Article.objects.filter(
-            pk=view.kwargs.get('pk')
-        ).first().author == User.objects.filter(email=request.query_params.get('author')).first()
+            pk=view.kwargs.get('pk'),
+            author__email=request.query_params.get('author')
+        ).exists()
