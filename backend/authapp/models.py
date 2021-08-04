@@ -7,7 +7,7 @@ from .managers import UserManager
 
 
 class Country(models.Model):
-    name = models.CharField(max_length=32)
+    name = models.CharField(max_length=64)
     sticker = models.CharField(max_length=3)
 
     def __str__(self):
