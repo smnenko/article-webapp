@@ -51,8 +51,3 @@ class User(AbstractBaseUser, PermissionsMixin):
                 'exp': refresh_token_obj['exp']
             }
         }
-
-
-class AuthorSubscriber(models.Model):
-    author = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='author')
-    subscriber = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='subscriber')

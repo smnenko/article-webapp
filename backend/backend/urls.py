@@ -8,4 +8,5 @@ urlpatterns = [
     path('api/v1/auth/', include('authapp.urls')),
     path('api/v1/topic/', include('topic.urls')),
     path('api/v1/article/', include('article.urls')),
+    path('api/v1/subscribe/', include('subscribe.urls'))
 ]

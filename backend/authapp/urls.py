@@ -10,6 +10,5 @@ urlpatterns = [
     path('<int:pk>/', views.UserRetrieveUpdateAPIView.as_view()),
     path('<str:username>/', views.AuthorRetrieveAPIView.as_view()),
     path('token/', views.TokenRefreshView.as_view()),
-    path('subscribe/', views.SubscribeAPIView.as_view()),
 ]
 

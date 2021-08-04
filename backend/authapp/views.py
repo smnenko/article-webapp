@@ -1,16 +1,17 @@
+from django.db.models import Value
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
 from rest_framework import generics
 from rest_framework.views import APIView
 
-from .models import User, AuthorSubscriber
+from subscribe.models import AuthorSubscriber
+from .models import User
 from .serializers import RegistrationSerializer
 from .serializers import LoginSerializer
 from .serializers import ProfileSerializer
 from .serializers import AuthorSerializer
 from .serializers import TokenRefreshSerializer
-from .serializers import SubscribeSerializer
 
 
 class RegistrationAPIView(generics.CreateAPIView):
@@ -52,18 +53,3 @@ class AuthorRetrieveAPIView(generics.RetrieveAPIView):
     serializer_class = AuthorSerializer
     permission_classes = (IsAuthenticated, )
     lookup_field = 'username'
-
-
-class SubscribeAPIView(generics.CreateAPIView):
-    serializer_class = SubscribeSerializer
-    queryset = AuthorSubscriber
-    permission_classes = (IsAuthenticated, )
-
-    def post(self, request, *args, **kwargs):
-        request.data['author'] = User.objects.filter(email=request.data['author']).first().id
-        request.data['subscriber'] = request.user.id
-        obj = self.queryset.objects.filter(author_id=request.data['author'], subscriber_id=request.data['subscriber'])
-        if not obj.exists():
-            return super().post(request, args, kwargs)
-        obj.delete()
-        return Response({'message': 'Unsubscribed'}, status.HTTP_200_OK)
