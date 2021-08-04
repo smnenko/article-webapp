@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from rest_framework import serializers
 
-from .models import User
+from .models import User, AuthorSubscriber
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
@@ -66,3 +66,10 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['email', 'username', 'name', 'birthday', 'country', 'bio']
+
+
+class SubscribeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = AuthorSubscriber
+        fields = ['author', 'subscriber']
