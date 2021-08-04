@@ -3,6 +3,7 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
 
 from authapp.permissions import IsAuthor
+from authapp.models import User
 from .serializers import ArticleSerializer
 from .serializers import ArticleRetrieveSerializer
 from .serializers import ArticleTrendingSerializer
@@ -41,8 +42,9 @@ class ArticleRetrieveAPIView(generics.RetrieveAPIView):
 
 
 class ArticleUpdateAPIView(generics.UpdateAPIView):
-    serializer_class = ArticleSerializer
-    permission_classes = (IsAdminUser, )
+    serializer_class = ArticleRetrieveSerializer
+    queryset = Article.objects.all()
+    permission_classes = (IsAuthor, )
 
 
 class ArticleDestroyAPIView(generics.DestroyAPIView):
@@ -50,4 +52,4 @@ class ArticleDestroyAPIView(generics.DestroyAPIView):
     permission_classes = (IsAuthenticated, IsAuthor)
 
     def get_queryset(self):
-        return Article.objects.filter(author_id=self.kwargs.get('user_id'))
+        return Article.objects.filter(author=User.objects.filter(email=self.request.query_params.get('author')))
