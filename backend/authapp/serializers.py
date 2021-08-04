@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from rest_framework import serializers
 
-from .models import User, AuthorSubscriber
+from .models import User
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
@@ -74,10 +74,3 @@ class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['username', 'name', 'birthday', 'country', 'bio']
-
-
-class SubscribeSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = AuthorSubscriber
-        fields = ['author', 'subscriber']

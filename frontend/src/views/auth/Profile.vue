@@ -100,6 +100,23 @@
     export default {
         name: "Profile",
         components: {Footer, Header},
+        data() {
+            return {
+                userInfo: null,
+                items: null,
+                name: null,
+                username: null,
+                bio: null,
+                errors: null,
+                message: null,
+                articleMessage: null,
+                show: false,
+                title: null,
+                content: null,
+                availableTopics: [],
+                selectedTopics: []
+            }
+        },
         mounted() {
             let id = this.$cookie.get('id')
             axios.get(process.env.VUE_APP_SERVER_HOST + 'auth/' + id + '/', {
@@ -243,23 +260,6 @@
                         }
                     )
                 e.target.reset()
-            }
-        },
-        data() {
-            return {
-                userInfo: null,
-                items: null,
-                name: null,
-                username: null,
-                bio: null,
-                errors: null,
-                message: null,
-                articleMessage: null,
-                show: false,
-                title: null,
-                content: null,
-                availableTopics: [],
-                selectedTopics: []
             }
         },
     }
