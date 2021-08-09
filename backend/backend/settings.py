@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'authapp',
     'topic',
     'article',
+    'subscribe'
 ]
 
 REST_FRAMEWORK = {

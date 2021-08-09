@@ -1,6 +1,39 @@
 <template>
     <div class="wrapper">
         <Header />
+        <div v-if="show" class="modal-edit bg-secondary text-light position-absolute w-50 h-50 zindex-popover">
+            <button class="btn-close bg-light float-end" @click="showModal"></button>
+            <div class="content">
+                <div class="header">
+                    <h3 class="text-center mb-4 mt-3">Edit article</h3>
+                    <form @submit="update" @submit.prevent>
+                        <div class="text-center">
+                            <div>Title: </div>
+                            <input class="mb-4 w-50" type="text" id="title" name="title" v-model="title">
+                        </div>
+                        <div class="text-center">
+                            <div>Content: </div>
+                            <textarea rows="5" cols="60" id="content" name="content" v-model="content"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <div>Content: </div>
+                            <div class="topics col-10">
+                                <div class="topic-item" v-for="topic in availableTopics" :key="topic.id">
+                                    <label :for="topic.id" class="ml-2">
+                                        <input type="checkbox" :name="topic.id" :id="topic.id" :value="topic.id" v-model="selectedTopics">
+                                        {{ topic.name }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-absolute end-0 justify-content-evenly w-50 d-flex">
+                            <button type="submit" class="btn btn-primary px-5">Update</button>
+                            <button class="btn btn-primary px-5" @click="showModal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-6">
@@ -9,6 +42,7 @@
                         {{ articleMessage }}
                     </div>
                     <div v-for="item in items" :key="item.id" class="container mb-4">
+                        <button class="edit btn btn-primary" @click="showModal(item.id)">Edit</button>
                         <button class="delete btn btn-danger" @click="deleteArticle(item.id)">Delete</button>
                         <router-link :to="'/article/' + item.id" class="text-decoration-none text-dark">
                             <h6 class="fw-bold">{{ item.title.slice(0, 55) }}...</h6>
@@ -66,6 +100,23 @@
     export default {
         name: "Profile",
         components: {Footer, Header},
+        data() {
+            return {
+                userInfo: null,
+                items: null,
+                name: null,
+                username: null,
+                bio: null,
+                errors: null,
+                message: null,
+                articleMessage: null,
+                show: false,
+                title: null,
+                content: null,
+                availableTopics: [],
+                selectedTopics: []
+            }
+        },
         mounted() {
             let id = this.$cookie.get('id')
             axios.get(process.env.VUE_APP_SERVER_HOST + 'auth/' + id + '/', {
@@ -80,23 +131,53 @@
                         this.username = this.userInfo.username
                         this.bio = this.userInfo.bio
                     }
+                    axios.get(process.env.VUE_APP_SERVER_HOST + 'article/latest/' + this.username + '/').then(
+                        response => {
+                            if (response.status === 200) {
+                                this.items = response.data.results
+                            }
+                        }
+                    )
                 }
             )
-            axios.get(process.env.VUE_APP_SERVER_HOST + 'article/latest/' + id + '/').then(
-                response => {
-                    if (response.status === 200) {
-                        this.items = response.data.results
+            axios
+                .get(process.env.VUE_APP_SERVER_HOST + 'topic/', )
+                .then(
+                    response => {
+                        this.availableTopics = response.data.results
                     }
-                }
-            )
+                )
         },
         methods: {
             getDateFromDatetime,
             randomMinRead,
-            deleteArticle: function(id) {
-                axios.delete(process.env.VUE_APP_SERVER_HOST + 'article/' + id + '/' + this.$cookie.get('id') + '/', {
+            update: function () {
+                axios.patch(process.env.VUE_APP_SERVER_HOST + 'article/' + this.id + '/edit/', {
+                    title: this.title,
+                    content: this.content,
+                    topics: this.selectedTopics
+                }, {
                     headers: {
                         Authorization: 'Bearer ' + this.$cookie.get('access')
+                    },
+                    params: {
+                        author: this.$cookie.get('email')
+                    }
+                })
+                    .then(response => {
+                        if (response.status === 200) {
+                            this.show = false
+                            this.articleMessage = 'Article updated successfully'
+                        }
+                    })
+            },
+            deleteArticle: function(id) {
+                axios.delete(process.env.VUE_APP_SERVER_HOST + 'article/' + id + '/delete/', {
+                    headers: {
+                        Authorization: 'Bearer ' + this.$cookie.get('access')
+                    },
+                    params: {
+                        author: this.$cookie.get('email')
                     }
                 }).then(
                     response => {
@@ -105,6 +186,20 @@
                         }
                     }
                 )
+            },
+            showModal: function (id) {
+                this.show = !this.show
+                if (this.show === true) {
+                    axios.get(process.env.VUE_APP_SERVER_HOST + 'article/' + id + '/')
+                        .then(response => {
+                            if (response.status === 200) {
+                                this.id = response.data.id
+                                this.title = response.data.title
+                                this.content = response.data.content
+                                this.selectedTopics = response.data.topics
+                            }
+                        })
+                }
             },
             checkForm: function (e) {
                 this.errors = []
@@ -167,18 +262,6 @@
                 e.target.reset()
             }
         },
-        data() {
-            return {
-                userInfo: null,
-                items: null,
-                name: null,
-                username: null,
-                bio: null,
-                errors: null,
-                message: null,
-                articleMessage: null
-            }
-        },
     }
 </script>
 
@@ -187,6 +270,20 @@
     .delete {
         position: absolute;
         left: 40%;
+    }
+
+    .edit {
+        position: absolute;
+        left: 37%;
+    }
+
+    .modal-edit {
+        z-index: 10000;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 
     .submit {
