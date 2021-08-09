@@ -21,7 +21,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     country = models.ForeignKey(to=Country, on_delete=models.DO_NOTHING, null=True)
     bio = models.TextField(max_length=1024, null=True)
     birthday = models.DateField(default=now)
-    refresh_token = models.CharField(max_length=256, null=True)
+    refresh_token = models.CharField(max_length=256, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
