@@ -172,7 +172,7 @@
                     })
             },
             deleteArticle: function(id) {
-                axios.delete(process.env.VUE_APP_SERVER_HOST + 'article/' + id + '/', {
+                axios.delete(process.env.VUE_APP_SERVER_HOST + 'article/' + id + '/delete/', {
                     headers: {
                         Authorization: 'Bearer ' + this.$cookie.get('access')
                     },
