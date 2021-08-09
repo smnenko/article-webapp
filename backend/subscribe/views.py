@@ -23,17 +23,17 @@ class SubscribeAPIView(APIView):
     def post(self, request, *args, **kwargs):
         author, subscriber = utils.get_author_subscriber_ids_from_request(request)
         obj = self.queryset.objects.filter(author_id=author, subscriber_id=subscriber)
-        if not obj.exists():
-            serializer = self.serializer_class(data={'author': author, 'subscriber': subscriber})
-            serializer.is_valid()
-            serializer.save()
-            return Response(serializer.data, status.HTTP_201_CREATED)
-        return Response({'message': 'You are already subscribed for this user'}, status.HTTP_400_BAD_REQUEST)
+
+        if obj.exists():
+            return Response({'message': 'You are already subscribed for this user'}, status.HTTP_400_BAD_REQUEST)
+        serializer = self.serializer_class(data={'author': author, 'subscriber': subscriber})
+        serializer.is_valid()
+        serializer.save()
+        return Response(serializer.data, status.HTTP_201_CREATED)
 
     def delete(self, request, *args, **kwargs):
         author, subscriber = utils.get_author_subscriber_ids_from_request(request)
         obj = self.queryset.objects.filter(author_id=author, subscriber_id=subscriber)
-        print(obj)
         if obj.exists():
             obj.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
