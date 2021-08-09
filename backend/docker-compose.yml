@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile_jenkins
+    ports:
+    - "9090:8080"
+    depends_on:
+      - web
+
+  db:
+    image: postgres
+    restart: always
+    volumes:
+    - ./data/db:/var/lib/postgres/data
+    ports:
+    - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: article-webapp
+
+  web:
+    build: .
+    command: sh -c "python3 manage.py migrate && wait && python3 manage.py loaddata initial.json && wait && gunicorn backend.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - .:/project
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    env_file:
+      - .env
