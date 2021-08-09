@@ -43,7 +43,5 @@ class ArticleLatestListAPIView(BaseTestCase):
         client.force_authenticate(user=self.user)
         resp = client.delete(reverse('article_delete', args=[self.article.id]))
         self.assertEqual(resp.status_code, 403)
-        resp = client.delete(
-            f"http://localhost:8000/api/v1/article/{self.article.id}/delete/?author={self.user.email}",
-            args=[self.article.id])
+        resp = client.delete(f"{reverse('article_delete', args=[self.article.id])}?author={self.user.email}")
         self.assertEqual(resp.status_code, 204)
