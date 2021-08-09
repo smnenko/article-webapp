@@ -97,10 +97,7 @@
                             let email = this.$cookie.get('email')
                             updateRefresh(this.$cookie, email, refresh_token)
                             let access = this.$cookie.get('access')
-                            console.log(access)
-                            console.log(error.config.headers.Authorization)
                             error.config.headers.Authorization = 'Bearer ' + access
-                            console.log(error.config.headers.Authorization)
                             return axios.request(error.config).then(
                                 response => {
                                     if (response.status === 201) {
@@ -108,6 +105,9 @@
                                     }
                                 }
                             )
+                        }
+                        if (error.response.status === 400) {
+                            this.errors.push(error.response.data['non_field_errors'][0])
                         }
                     }
                 )

@@ -22,7 +22,6 @@
         name: "Nav",
         data() {
             return {
-                name: this.$cookie.get('name'),
                 email: this.$cookie.get('email'),
                 status: null,
             }

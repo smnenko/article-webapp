@@ -3,6 +3,7 @@ import axios from "axios";
 export function logout(cookie) {
     cookie.delete('id')
     cookie.delete('email')
+    cookie.delete('username')
     cookie.delete('access')
     cookie.delete('access_exp')
     cookie.delete('refresh')
@@ -17,6 +18,7 @@ export function updateRefresh(cookie, email, refresh_token) {
         response => {
             cookie.set('id', response.data.email)
             cookie.set('email', response.data.email)
+            cookie.set('username', response.data.username)
             cookie.set('access', response.data.access.token)
             cookie.set('access_exp', response.data.access.exp)
             cookie.set('refresh', response.data.refresh.token)

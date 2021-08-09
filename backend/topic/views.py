@@ -18,3 +18,4 @@ class TopicCreateAPIView(generics.CreateAPIView):
 class TopicRetrieveAPIView(generics.RetrieveAPIView):
     serializer_class = TopicSerializer
     queryset = Topic.objects.all()
+    lookup_field = 'name'
