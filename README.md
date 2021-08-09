@@ -41,6 +41,10 @@ python manage.py loaddata initial.json
 ```
 npm install
 ```
+- Go to frontend folder, create ".env.local" file, insert next line and save it (or replace to your host and port)
+```
+VUE_APP_SERVER_HOST=http://localhost:8000/api/v1/
+```
 - Open 2 terminals and run client and server
 > You should be in backend directory for executing first command  
 > You should be in frontend directory for executing second command
