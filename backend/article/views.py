@@ -52,4 +52,4 @@ class ArticleDestroyAPIView(generics.DestroyAPIView):
     permission_classes = (IsAuthenticated, IsAuthor)
 
     def get_queryset(self):
-        return Article.objects.filter(author=User.objects.filter(email=self.request.query_params.get('author')))
+        return Article.objects.filter(author__email=self.request.query_params.get('author'))
