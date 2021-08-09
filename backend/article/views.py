@@ -24,23 +24,18 @@ class ArticleLatestListAPIView(generics.ListAPIView):
     queryset = Article.objects.all().order_by('-date_created')
 
     def get_queryset(self):
-        options = {}
         queryset = Article.objects.all()
-        topics = [int(i) for i in self.request.query_params.getlist('topic[]')] or None
+        topics = [int(i) for i in self.request.query_params.getlist('topic[]')] or []
         content = self.request.query_params.get('content') or None
-        if topics and len(topics) > 1:
+        if topics:
             queryset.annotate(c=Count('topics')).filter(c=len(topics))
             for topic in topics:
                 queryset = queryset.filter(topics__id=topic)
-            if content:
-                return queryset.filter(content__icontains=content)
-
-        if topics:
-            options['topics__id'] = topics[0]
 
         if content:
-            options['content__icontains'] = content
-        return queryset.filter(**options).order_by('-date_created')
+            queryset.filter(content__icontains=content)
+
+        return queryset.order_by('-date_created')
 
 
 class ArticleUserLatestListAPIView(generics.ListAPIView):
@@ -57,7 +52,9 @@ class ArticleCreateAPIView(generics.CreateAPIView):
     permission_classes = (IsAuthenticated, )
 
     def post(self, request, *args, **kwargs):
-        request.data['author'] = User.objects.filter(email=request.data['author']).first().pk
+        print(request.data)
+        request.data['author'] = User.objects.filter(email=request.data['author']).first().username
+        print(request.data)
         return super().post(request, *args, **kwargs)
 
 
