@@ -5,7 +5,7 @@
             <div class="inner-wrapper mx-5">
                 <h3 class="fw-bold">{{ item.title }}</h3>
                 <div class="mt-2">
-                    {{ getDateFromDatetime(item.date_created) }} by <router-link :to="'/author/' + item.id" class="text-decoration-none text-dark">{{ item.author }}</router-link>
+                    {{ getDateFromDatetime(item.date_created) }} by <router-link :to="'/user/' + item.author" class="text-decoration-none text-dark">{{ item.author }}</router-link>
                 </div>
                 <div class="content mx-5 mt-4">
                     {{ item.content }}

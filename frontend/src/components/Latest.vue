@@ -3,7 +3,9 @@
         <div class="row">
             <div class="col-8">
                 <div v-for="item in items" :key="item.id.toString()" class="mt-3">
-                    <h6 class="fw-bold">{{ item.author }}</h6>
+                    <router-link :to="'/user/' + item.author" class="text-decoration-none text-dark">
+                        <h6 class="fw-bold">{{ item.author }}</h6>
+                    </router-link>
                     <router-link :to="'/article/' + item.id" class="text-decoration-none text-dark">
                         <h3 class="fw-bold">{{ item.title.substring(0, 50) }}...</h3>
                         <p class="text-muted">{{ item.content }}</p>

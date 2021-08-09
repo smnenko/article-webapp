@@ -1,10 +1,24 @@
 from rest_framework import serializers
 
 from .models import Article
+from authapp.models import User
 
 
 class ArticleSerializer(serializers.ModelSerializer):
-    author = serializers.SlugRelatedField(slug_field='username', read_only=True)
+    author = serializers.SlugRelatedField(slug_field='email', queryset=User.objects.all())
+
+    class Meta:
+        model = Article
+        fields = '__all__'
+
+    def validate(self, attrs):
+        if attrs.get('author').username:
+            return super().validate(attrs)
+        raise serializers.ValidationError('Before you can create articles, specify a username')
+
+
+class ArticleRetrieveSerializer(serializers.ModelSerializer):
+    author = serializers.SlugRelatedField(slug_field='username', queryset=User.objects.all())
 
     class Meta:
         model = Article

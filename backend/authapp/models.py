@@ -7,7 +7,7 @@ from .managers import UserManager
 
 
 class Country(models.Model):
-    name = models.CharField(max_length=32)
+    name = models.CharField(max_length=64)
     sticker = models.CharField(max_length=3)
 
     def __str__(self):
@@ -21,7 +21,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     country = models.ForeignKey(to=Country, on_delete=models.DO_NOTHING, null=True)
     bio = models.TextField(max_length=1024, null=True)
     birthday = models.DateField(default=now)
-    refresh_token = models.CharField(max_length=256, null=True)
+    refresh_token = models.CharField(max_length=256, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -51,8 +51,3 @@ class User(AbstractBaseUser, PermissionsMixin):
                 'exp': refresh_token_obj['exp']
             }
         }
-
-
-class AuthorSubscriber(models.Model):
-    author = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='author')
-    subscriber = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='subscriber')

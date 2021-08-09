@@ -12,12 +12,15 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import _locale
 
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+_locale._getdefaultlocale = (lambda *args: ['en_US', 'utf8'])
 
 # Environment variables
 env = environ.Env()
@@ -53,6 +56,7 @@ INSTALLED_APPS = [
     'authapp',
     'topic',
     'article',
+    'subscribe'
 ]
 
 REST_FRAMEWORK = {
