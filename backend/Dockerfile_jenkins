@@ -1,0 +1,7 @@
+FROM jenkins/jenkins:lts
+
+USER root
+
+RUN echo "Starting to install necessary system scripts & libs"
+RUN apt-get update && apt-get install sudo python3-venv python3-pip libpq-dev python-dev -y
+RUN echo "Installation completed"
