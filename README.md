@@ -53,3 +53,20 @@ python manage.py runserver
 npm start
 ```
 - Go to http://localhost:8080/
+
+### Screenshots
+- Main page
+![Main](https://github.com/smnenko/article-webapp/blob/master/docs/main.PNG)
+![Main2nd](https://github.com/smnenko/article-webapp/blob/master/docs/main2dpart.PNG)
+- Login page
+![Login](https://github.com/smnenko/article-webapp/blob/master/docs/login.PNG)
+- Registration page
+![Register](https://github.com/smnenko/article-webapp/blob/master/docs/register.PNG)
+- Profile page
+![Profile](https://github.com/smnenko/article-webapp/blob/master/docs/profile.PNG)
+- Write article page
+![Write](https://github.com/smnenko/article-webapp/blob/master/docs/write.PNG)
+- Read article page
+![Read](https://github.com/smnenko/article-webapp/blob/master/docs/read.PNG)
+- Edit article page
+![Edit](https://github.com/smnenko/article-webapp/blob/master/docs/edit.PNG)
